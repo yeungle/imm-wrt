@@ -22,7 +22,7 @@
 #rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-adguardhome
 rm -rf feeds/packages/net/adguardhome
-#rm -rf feeds/luci/applications/luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git kenzok8-packages
 cp -rf kenzok8-packages/ddnsto package/ddnsto
@@ -38,11 +38,15 @@ cp -rf kenzok8-packages/luci-app-fastnet package/luci-app-fastnet
 #cp -rf kenzok8-packages/open-app-filter package/open-app-filter
 rm -rf kenzok8-packages
 
-#git clone --depth=1 https://github.com/vernesong/OpenClash.git OpenClash-packages
-#cp -rf OpenClash-packages/luci-app-openclash package/luci-app-openclash
-#rm -rf OpenClash-packages
+git clone --depth=1 https://github.com/destan19/OpenAppFilter.git OpenAppFilter
+cp -rf OpenAppFilter/luci-app-oaf package/luci-app-oaf
+cp -rf OpenAppFilter/oaf package/oaf
+cp -rf OpenAppFilter/open-app-filter package/open-app-filter
+rm -rf OpenAppFilter
 
-#git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 https://github.com/vernesong/OpenClash.git OpenClash-packages
+cp -rf OpenClash-packages/luci-app-openclash package/luci-app-openclash
+rm -rf OpenClash-packages
 
 #./scripts/feeds update -a
 #./scripts/feeds install -a
